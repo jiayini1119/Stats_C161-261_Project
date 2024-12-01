@@ -5,9 +5,14 @@ def load_dataset(file_path, chunk_size=1000000):
     df = pd.DataFrame()
     for chunk in tqdm(pd.read_csv(file_path, iterator=True, chunksize=chunk_size)):
         df = pd.concat([df, chunk], ignore_index=True)
+    return df
 
 def balanced_dataset_downsampling(chunks, random_state=123):
     df = pd.DataFrame()
+    
+    if isinstance(chunks, pd.DataFrame):
+        chunks = [chunks]
+    
     for chunk in tqdm(chunks):
         chunk.reset_index(drop=True, inplace=True)
         
