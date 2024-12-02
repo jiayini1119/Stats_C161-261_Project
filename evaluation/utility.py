@@ -43,7 +43,7 @@ def evaluate(method, X_train, y_train, X_test, y_test, random_state=123):
     
     fpr, tpr, _ = roc_curve(y_test, y_pred_proba)
     plt.figure(figsize=(10, 6))
-    plt.plot(fpr, tpr, color="b", label=f"{method} ROC Curve (AUC = {metrics["ROC-AUC"]:.2f})")
+    plt.plot(fpr, tpr, color="b", label=f"{method} ROC Curve (AUC = {metrics['ROC-AUC']:.2f})")
     plt.plot([0, 1], [0, 1], color="r", linestyle="--", label="Random Classifier")
     plt.xlabel("False Positive Rate")
     plt.ylabel("True Positive Rate")
