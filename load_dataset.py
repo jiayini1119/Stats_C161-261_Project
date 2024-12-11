@@ -39,5 +39,3 @@ def separate_labels(file_path, label_column="label", chunk_size=1000000):
     
 
     return df_label_0, df_label_1
-
-### TODO: Create dp dataset

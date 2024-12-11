@@ -29,6 +29,9 @@ def evaluate(method, X_train, y_train, X_test, y_test, random_state=123):
     
     y_pred_proba = model.predict_proba(X_test_scaled)[:, 1]
     y_pred = model.predict(X_test_scaled)
+    print(y_test)
+    print(y_pred)
+
     
     metrics = {
         "ROC-AUC": roc_auc_score(y_test, y_pred_proba),
